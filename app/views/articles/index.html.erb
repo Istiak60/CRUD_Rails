@@ -1,0 +1,11 @@
+<h1>This is my own blog</h1>
+<p>Lets fly on the sky </p>
+<h1>Articles</h1>
+
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <%= article.title %>
+    </li>
+  <% end %>
+</ul>
