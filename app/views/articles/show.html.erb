@@ -3,7 +3,17 @@
 <p><%= @article.body %></p>
 <ul>
   <li><%= link_to "Edit", edit_article_path(@article) %></li>
-  <li><%= link_to "Destroy", article_path(@article) %></li>
+  <%
+=begin%>
+ <li><%= link_to "Destroy", article_path(@article) %></li> 
+<%
+=end%>
+  <%= button_to "Delete", article_path(@article),
+                                    method: :delete
+                                   %>
+
+
+                                    
   
 </ul>
 <h2>Comments</h2>

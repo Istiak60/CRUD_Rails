@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root "articles#index"
 
   resources :articles do
-    resources :comments
+    resources :comments ,only: [:create,:destroy]
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
