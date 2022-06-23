@@ -4,5 +4,6 @@ FactoryBot.define do
     email{'abc@gmail.com'}
     password{'Selise1234'}
     phoneNo { '88546669781' }
+    role
   end
 end
