@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'users/index'
+  devise_for :users
+  resources :users
   get 'welcome/index'
   # get "/articles", to: "articles#index"
   # get "/articles/:id", to: "articles#show"
