@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   def index
     @article = Article.all
     @pagy, @article = pagy(Article, items: 2)
-
+    @article = Article.search(params[:search])
   end
   def show
     @article = Article.find(params[:id])
