@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+     include Pundit::Authorization
+     include Pagy::Backend
     before_action :authenticate_user!,  except: [:new, :create]
     protect_from_forgery with: :exception
 
