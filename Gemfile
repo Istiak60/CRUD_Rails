@@ -82,3 +82,5 @@ end
 gem "pagy", "~> 5.10"
 
 gem "bootstrap", "~> 5.1"
+
+gem "rubocop", "~> 1.31"
