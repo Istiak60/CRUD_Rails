@@ -1,8 +1,13 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <h1>This is my own blog</h1>
 <p>Lets fly on the sky </p>
 <h1>Articles</h1>
-
- 
+<%= form_with(url: '/articles', method: 'get', local: true) do %>
+  <%= text_field_tag(:search) %>
+  <%= submit_tag("Search") %>
+<% end %>
+ <h2>Advance Search</h2>
+  <%= link_to "Advanced Search", new_search_path %>
   
   
     <ul>
@@ -16,7 +21,11 @@
         <li>
           <%= link_to "Edit Profile", edit_user_registration_path, class:"nav-link" %>
         </li>
-
+              <% if current_user.user_type == 'admin' %>
+                  <li>
+          <%= link_to "User Index",  users_index_path, class:"nav-link" %>
+        </li>
+            <% end %>
       <% else %>
         <li>
           <%= link_to "Sign Up", new_user_registration_path, class:"nav-link" %>
@@ -55,3 +64,5 @@
   <% end %>
 </ul>
 <%= link_to "New Article", new_article_path %>
+
+  <%== pagy_bootstrap_nav(@pagy) %>

@@ -51,6 +51,8 @@ gem "bootsnap", require: false
 #DEVISE Authentication
 
 gem 'devise', '~> 4.8', '>= 4.8.1'
+#PUNDIT 
+gem "pundit"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -76,3 +78,9 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "pagy", "~> 5.10"
+
+gem "bootstrap", "~> 5.1"
+
+gem "rubocop", "~> 1.31"
